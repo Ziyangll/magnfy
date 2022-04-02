@@ -22,6 +22,7 @@ const Home = () => {
         <CardStack
           loop
           verticalSwipe={true}
+          disableBottomSwipe = {true}
           renderNoMoreCards={() => null}
           ref={(newSwiper): void => setSwiper(newSwiper)}
         >

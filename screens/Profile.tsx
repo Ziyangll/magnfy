@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ScrollView,
   View,
@@ -6,35 +6,24 @@ import {
   ImageBackground,
   TouchableOpacity,
   FlatList,
-} from "react-native";
-import {CardItem,Icon, ProfileItem } from "../components";
-import DEMO from "../assets/data/demo";
-import styles, { WHITE } from "../assets/styles";
+} from 'react-native';
+import { CardItem, Icon, ProfileItem } from '../components';
+import DEMO from '../assets/data/demo';
+import styles, { WHITE } from '../assets/styles';
 
 const Profile = () => {
-  const {
-    age,
-    image,
-    info1,
-    info2,
-    info3,
-    info4,
-    location,
-    match,
-    name,
-  } = DEMO[7];
+  const { image, info1, info2, info3, info4, location, match, name } = DEMO[7];
 
   return (
     <ImageBackground
-      source={require("../assets/images/bg.png")}
-      style={styles.bg}
-    >
+      source={require('../assets/images/bg.png')}
+      style={styles.bg}>
       <ScrollView style={styles.containerProfile}>
         <ImageBackground source={image} style={styles.photo}>
           <View style={styles.top}>
             <TouchableOpacity>
               <Icon
-                name="chevron-back"
+                name='chevron-back'
                 size={20}
                 color={WHITE}
                 style={styles.topIconLeft}
@@ -43,7 +32,7 @@ const Profile = () => {
 
             <TouchableOpacity>
               <Icon
-                name="ellipsis-vertical"
+                name='ellipsis-vertical'
                 size={20}
                 color={WHITE}
                 style={styles.topIconRight}
@@ -55,7 +44,6 @@ const Profile = () => {
         <ProfileItem
           matches={match}
           name={name}
-          age={age}
           location={location}
           info1={info1}
           info2={info2}
@@ -80,11 +68,11 @@ const Profile = () => {
         />
         <View style={styles.actionsProfile}>
           <TouchableOpacity style={styles.circledButton}>
-            <Icon name="ellipsis-horizontal" size={20} color={WHITE} />
+            <Icon name='ellipsis-horizontal' size={20} color={WHITE} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.roundedButton}>
-            <Icon name="chatbubble" size={20} color={WHITE} />
+            <Icon name='chatbubble' size={20} color={WHITE} />
             <Text style={styles.textButton}>Start chatting</Text>
           </TouchableOpacity>
         </View>

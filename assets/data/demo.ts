@@ -1,22 +1,27 @@
 import { DataT } from '../../types';
 
-import IMG_creator01 from '../assets/images/creator01.jpg';
+import IMG_creator01 from '../images/creator.jpg';
 
-import IMG_product01 from '../assets/images/product_img_01.jpg';
-import IMG_product02 from '../assets/images/product_img_02.jpg';
-import IMG_product03 from '../assets/images/product_img_03.jpg';
-import IMG_product04 from '../assets/images/product_img_04.jpg';
-import IMG_product05 from '../assets/images/product_img_05.jpg';
+import IMG_product01 from '../images/product_img_01.jpg';
+import IMG_product02 from '../images/product_img_02.jpg';
+import IMG_product03 from '../images/product_img_03.jpg';
+import IMG_product04 from '../images/product_img_04.jpg';
+import IMG_product05 from '../images/product_img_05.jpg';
 
 const data: DataT[] = [
   {
     id: 1,
     name: 'test',
     isOnline: true,
-    match: '78',
+    match: '99',
     description: 'test description.',
     message: 'test message.',
     image: IMG_creator01,
+    info1: 'string;',
+    info2: 'string;',
+    info3: ' string;',
+    info4: 'string;',
+    location: 'string;',
   },
 ];
 
