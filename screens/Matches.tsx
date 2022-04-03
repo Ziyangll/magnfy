@@ -7,8 +7,8 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
-import { CardItem, Icon } from "../components";
-import DEMO from "../assets/data/demo";
+import { CardItem, Icon, ProductItem } from "../components";
+import DEMO, {products} from "../assets/data/demo";
 import styles, { DARK_GRAY } from "../assets/styles";
 
 const Matches = () => (
@@ -26,14 +26,14 @@ const Matches = () => (
 
       <FlatList
         numColumns={2}
-        data={DEMO}
+        data={products}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity>
-            <CardItem
+            <ProductItem
               image={item.image}
               name={item.name}
-              isOnline={item.isOnline}
+              price = {item.price}
               hasVariant
             />
           </TouchableOpacity>

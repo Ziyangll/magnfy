@@ -12,7 +12,7 @@ export type ProductItemT = {
   hasActions?: boolean;
   hasVariant?: boolean;
   image: any;
-  price: number;
+  price: string;
   name: string;
 };
 
@@ -35,8 +35,15 @@ export type ProfileItemT = {
   info2?: string;
   info3?: string;
   info4?: string;
-  location?: string;
+  description?: string;
   matches: string;
+  name: string;
+};
+
+export type ProductProfileItemT = {
+  description: string;
+  creator: string;
+  price: string;
   name: string;
 };
 
@@ -60,4 +67,6 @@ export type DataT = {
   info3?: string;
   info4?: string;
   location?: string;
+
+  products: number[];
 };

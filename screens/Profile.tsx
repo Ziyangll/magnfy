@@ -7,12 +7,12 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import { CardItem, Icon, ProfileItem } from '../components';
-import DEMO from '../assets/data/demo';
+import { CardItem, Icon, ProductItem, ProfileItem } from '../components';
+import DEMO, { products } from '../assets/data/demo';
 import styles, { WHITE } from '../assets/styles';
 
 const Profile = () => {
-  const { image, info1, info2, info3, info4, location, match, name } = DEMO[7];
+  const { image, info1, info2, info3, info4, description, match, name } = DEMO[0];
 
   return (
     <ImageBackground
@@ -44,38 +44,29 @@ const Profile = () => {
         <ProfileItem
           matches={match}
           name={name}
-          location={location}
+          description={description}
           info1={info1}
           info2={info2}
           info3={info3}
           info4={info4}
         />
         <Text style={styles.profileTitle}>Products</Text>
-        <FlatList
-          numColumns={2}
-          data={DEMO}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => (
-            <TouchableOpacity>
-              <CardItem
-                image={item.image}
-                name={item.name}
-                isOnline={item.isOnline}
-                hasVariant
-              />
-            </TouchableOpacity>
-          )}
-        />
-        <View style={styles.actionsProfile}>
-          <TouchableOpacity style={styles.circledButton}>
-            <Icon name='ellipsis-horizontal' size={20} color={WHITE} />
-          </TouchableOpacity>
 
-          <TouchableOpacity style={styles.roundedButton}>
-            <Icon name='chatbubble' size={20} color={WHITE} />
-            <Text style={styles.textButton}>Start chatting</Text>
-          </TouchableOpacity>
+        <View>
+          {DEMO[0].products.map((item, index) => {
+            return (
+              <TouchableOpacity key={index}>
+                <ProductItem
+                  image={products[item].image}
+                  name={products[item].name}
+                  price={products[item].price}
+                  hasVariant
+                />
+              </TouchableOpacity>
+            );
+          })}
         </View>
+        
       </ScrollView>
     </ImageBackground>
   );

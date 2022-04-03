@@ -4,3 +4,5 @@ export { default as Filters } from "./Filters";
 export { default as Icon } from "./Icon";
 export { default as Message } from "./Message";
 export { default as ProfileItem } from "./ProfileItem";
+export { default as ProductItem } from "./ProductItem";
+export { default as ProductProfile } from "./ProductProfile";

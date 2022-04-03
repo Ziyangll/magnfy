@@ -1,18 +1,18 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-export const PRIMARY_COLOR = '#7444C0';
-export const SECONDARY_COLOR = '#5636B8';
+export const PRIMARY_COLOR = '#146356';
+export const SECONDARY_COLOR = '#70AF85';
 export const WHITE = '#EEEEEE';
-export const GRAY = '#757E90';
-export const DARK_GRAY = '#363636';
+export const GRAY = '#679186';
+export const DARK_GRAY = '#222831';
 export const BLACK = '#111111';
 
 export const ONLINE_STATUS = '#46A575';
 export const OFFLINE_STATUS = '#D04949';
 
-export const STAR_ACTIONS = '#FFA200';
-export const LIKE_ACTIONS = '#B644B2';
-export const DISLIKE_ACTIONS = '#363636';
+export const STAR_ACTIONS = '#A3DA8D';
+export const LIKE_ACTIONS = '#146356';
+export const DISLIKE_ACTIONS = '#F3C892';
 export const FLASH_ACTIONS = '#5028D7';
 
 export const DIMENSION_WIDTH = Dimensions.get('window').width;
@@ -229,9 +229,14 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  title: { paddingBottom: 10, fontSize: 22, color: DARK_GRAY, },
-  
-  profileTitle: { paddingBottom: 10, fontSize: 22, color: DARK_GRAY, paddingLeft: 15 },
+  title: { paddingBottom: 10, fontSize: 22, color: DARK_GRAY },
+
+  profileTitle: {
+    paddingBottom: 10,
+    fontSize: 22,
+    color: DARK_GRAY,
+    paddingLeft: 15,
+  },
   // CONTAINER - HOME
   containerHome: {
     marginHorizontal: 10,
@@ -267,6 +272,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
+    paddingTop: 20,
+    paddingBottom: 40,
   },
   textButton: {
     fontSize: 15,

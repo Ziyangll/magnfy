@@ -1,39 +1,42 @@
-import React, { useState } from "react";
-import { View, ImageBackground } from "react-native";
-import CardStack, { Card } from "react-native-card-stack-swiper";
-import { City, Filters, CardItem } from "../components";
-import styles from "../assets/styles";
-import DEMO from "../assets/data/demo";
+import React, { useState } from 'react';
+import { View, ImageBackground } from 'react-native';
+import CardStack, { Card } from 'react-native-card-stack-swiper';
+import { City, Filters, CardItem, ProductItem } from '../components';
+import styles from '../assets/styles';
+import DEMO, { products } from '../assets/data/demo';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ShoppingCart from './ShoppingCart';
+
+const shuffledProducts = [...products].sort(() => Math.random() - 0.5);
 
 const Home = () => {
   const [swiper, setSwiper] = useState<CardStack | null>(null);
+  const Stack = createStackNavigator();
 
   return (
     <ImageBackground
-      source={require("../assets/images/bg.png")}
-      style={styles.bg}
-    >
+      source={require('../assets/images/bg.png')}
+      style={styles.bg}>
       <View style={styles.containerHome}>
         <View style={styles.top}>
-          <City />
           <Filters />
         </View>
 
         <CardStack
           loop
           verticalSwipe={true}
-          disableBottomSwipe = {true}
+          disableBottomSwipe={true}
           renderNoMoreCards={() => null}
-          ref={(newSwiper): void => setSwiper(newSwiper)}
-        >
-          {DEMO.map((item) => (
+          ref={(newSwiper): void => setSwiper(newSwiper)}>
+          {shuffledProducts.map((item) => (
             <Card key={item.id}>
-              <CardItem
+              <ProductItem
                 hasActions
                 image={item.image}
                 name={item.name}
                 description={item.description}
-                matches={item.match}
+                price={item.price}
               />
             </Card>
           ))}

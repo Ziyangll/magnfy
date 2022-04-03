@@ -9,48 +9,34 @@ const ProfileItem = ({
   info2,
   info3,
   info4,
-  location,
+  description,
   matches,
   name,
 }: ProfileItemT) => (
   <View style={styles.containerProfileItem}>
     <View style={styles.matchesProfileItem}>
       <Text style={styles.matchesTextProfileItem}>
-        <Icon name='heart' size={13} color={WHITE} /> {matches}% Match!
+        <Icon name='chatbubble-ellipses' color={'#ffff'} size={20} /> Chat now
       </Text>
     </View>
-
     <Text style={styles.name}>{name}</Text>
 
-    <Text style={styles.descriptionProfileItem}>{location}</Text>
+    <Text style={styles.descriptionProfileItem}>{description}</Text>
 
     <View style={styles.info}>
       <Text style={styles.iconProfile}>
-        <Icon name='person' size={12} color={DARK_GRAY} />
+        <Icon name='briefcase' size={12} color={DARK_GRAY} />
       </Text>
       <Text style={styles.infoContent}>{info1}</Text>
     </View>
 
     <View style={styles.info}>
       <Text style={styles.iconProfile}>
-        <Icon name='pizza' size={12} color={DARK_GRAY} />
+        <Icon name='cash' size={12} color={DARK_GRAY} />
       </Text>
       <Text style={styles.infoContent}>{info2}</Text>
     </View>
 
-    <View style={styles.info}>
-      <Text style={styles.iconProfile}>
-        <Icon name='airplane' size={12} color={DARK_GRAY} />
-      </Text>
-      <Text style={styles.infoContent}>{info3}</Text>
-    </View>
-
-    <View style={styles.info}>
-      <Text style={styles.iconProfile}>
-        <Icon name='calendar' size={12} color={DARK_GRAY} />
-      </Text>
-      <Text style={styles.infoContent}>{info4}</Text>
-    </View>
   </View>
 );
 

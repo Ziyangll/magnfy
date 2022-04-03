@@ -45,14 +45,6 @@ const CardItem = ({
       {/* IMAGE */}
       <Image source={image} style={imageStyle} />
 
-      {/* MATCHES */}
-      {matches && (
-        <View style={styles.matchesCardItem}>
-          <Text style={styles.matchesTextCardItem}>
-            <Icon name='heart' color={WHITE} size={13} /> {matches}% Match!
-          </Text>
-        </View>
-      )}
 
       {/* NAME */}
       <Text style={nameStyle}>{name}</Text>

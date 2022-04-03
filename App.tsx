@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Matches, Messages, Profile } from './screens';
+import { Home, Matches, Messages, Profile, ShoppingCart } from './screens';
 import { PRIMARY_COLOR, DARK_GRAY, BLACK, WHITE } from './assets/styles';
 import TabBarIcon from './components/TabBarIcon';
 
@@ -36,6 +36,7 @@ const App = () => (
                 shadowOffset: { height: 0, width: 0 },
               },
             }}>
+
             <Tab.Screen
               name='Explore'
               component={Home}
@@ -59,7 +60,19 @@ const App = () => (
                 ),
               }}
             />
-
+            <Tab.Screen 
+              name = "cart" 
+              component = {ShoppingCart}
+              options={{
+                tabBarIcon: ({ focused }) => (
+                  <TabBarIcon 
+                    focused={focused} 
+                    iconName='cart' 
+                    text='Cart' 
+                  />
+                ),
+              }}
+            />
             <Tab.Screen
               name='Chat'
               component={Messages}
@@ -67,6 +80,7 @@ const App = () => (
                 tabBarIcon: ({ focused }) => (
                   <TabBarIcon
                     focused={focused}
+                    
                     iconName='chatbubble'
                     text='Chat'
                   />

@@ -49,7 +49,7 @@ const ProductItem = ({
 
       {/* DESCRIPTION */}
       {description && (
-        <Text style={styles.descriptionCardItem}>{description}</Text>
+        <Text style={styles.descriptionCardItem}>{price}</Text>
       )}
 
       
